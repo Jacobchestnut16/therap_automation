@@ -32,9 +32,11 @@ def download_report():
     start_date_input.clear()
     start_date_input.send_keys("2025-08-01")  # example start date
     end_date_input.clear()
-    end_date_input.send_keys("2025-08-14")  # example end date
+    end_date_input.send_keys("2025-08-09")  # example end date
 
-    driver.find_element(By.ID, "export_excel").click()
+    driver.find_element(By.NAME, "continueButton").click()
+
+    driver.find_element(By.XPATH, "//a[contains(@href, 'id=')]").click()
 
     time.sleep(5)  # wait for download to finish
     driver.quit()
